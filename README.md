@@ -1,8 +1,6 @@
 # Partially Applied Operators
 <img src="https://img.shields.io/badge/Swift-4.0-orange.svg"/>
-    <a href="https://twitter.com/pangburnout">
-        <img src="https://img.shields.io/badge/contact-@pangburnout-blue.svg?style=flat" alt="Twitter: @pangburnout" />
-    </a>
+    <a href="https://twitter.com/pangburnout"><img src="https://img.shields.io/badge/contact-@pangburnout-blue.svg?style=flat" alt="Twitter: @pangburnout"/></a>
 
 A thought experiment in bringing the semantics of Haskell's partial application of operators to Swift.
 
