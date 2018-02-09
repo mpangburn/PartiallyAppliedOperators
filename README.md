@@ -1,10 +1,8 @@
 # Partially Applied Operators
-<p align="center">
-    <img src="https://img.shields.io/badge/Swift-4.0-orange.svg"/>
+<img src="https://img.shields.io/badge/Swift-4.0-orange.svg"/>
     <a href="https://twitter.com/pangburnout">
         <img src="https://img.shields.io/badge/contact-@pangburnout-blue.svg?style=flat" alt="Twitter: @pangburnout" />
     </a>
-</p>
 
 A thought experiment in bringing the semantics of Haskell's partial application of operators to Swift.
 
@@ -49,7 +47,7 @@ add2(10) // 12
 
 In this way, currying allows for composable, reusable functions.
 
-Since operators are really just infix functions (with special symbols), they can also be partially applied. Partially appplied operators are especially useful for mapping over or filtering a list:
+Since operators are really just infix functions with special symbols, they can also be partially applied. Partially appplied operators are especially useful for mapping over or filtering a list:
 
 ```haskell
 numbers = [1, 2, 3, 4, 5]
@@ -78,7 +76,7 @@ numbers.filter(>=3) // [3, 4, 5]
 ## Implementation
 The built-in operators defined in the Swift Standard Library are not curried. We could curry them using a [helper function](https://github.com/pointfreeco/swift-prelude/blob/b23463ebd7c1ce11600f86cbcb8165098fd44693/Sources/Prelude/Curry.swift), but calling `curry` whenever we partially apply an operator would be inelegant and obscure our intent.
 
-Instead, we define unary versions of the infix operators in order to partially apply them. For example, our `add` example from above becomes
+Instead, we define "unary" versions of the infix operators in order to partially apply them. For example, our `add` example from above becomes
 
 ```swift
 prefix func + <T: Numeric> (rhs: T) -> (_ lhs: T) -> T {
@@ -105,7 +103,7 @@ Some limitations are imposed on operator declarations in certain contexts:
 - Postfix operators cannot begin with '!' because of its use with Optionals, which prevents the postfix definitions of `!=` and `!==`.__*__
 - Postfix operators cannot begin with '?' because of its use with Optionals, which prevents the postfix definition of `??`.
 
-__*__ In practice, the restrictions on these operators are trivial since their operations are commutative and either their prefix or postfix version can be implemented without issues.
+__*__ In practice, the restrictions on these operators are trivial since their operations are commutative, and either their prefix or postfix version can be implemented without issues.
 
 ## Looking Forward
 While [SE-002](https://github.com/apple/swift-evolution/blob/master/proposals/0002-remove-currying.md) removed previous syntax for currying, it also included some brief thoughts on [the future of currying in Swift](https://github.com/apple/swift-evolution/blob/master/proposals/0002-remove-currying.md#alternatives-considered). While we have yet to see movement on this front, inherently curried functions would have significant implications for the functional Swift community. Hopefully, the syntax introduced through this project will one day be native to Swift through built-in partial function application.
