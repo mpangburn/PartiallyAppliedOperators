@@ -64,7 +64,7 @@ prefix func !== <T: AnyObject> (rhs: T) -> (_ lhs: T) -> Bool {
 
 // MARK: - Comparable operators
 
-/* Prefix '<' is presumably reserved to avoid confusion in identifying generics */
+/* Prefix '<' is reserved to avoid compiler confusion in identifying generics */
 // prefix operator <
 // prefix func < <T: Comparable> (rhs: T) -> (_ lhs: T) -> Bool {
 //     return { $0 < rhs }
@@ -80,7 +80,7 @@ prefix func > <T: Comparable> (rhs: T) -> (_ lhs: T) -> Bool {
     return { $0 > rhs }
 }
 
-/* Postfix '>' is presumably reserved to avoid confusion in identifying generics */
+/* Postfix '>' is reserved to avoid compiler confusion in identifying generics */
 // postfix operator >
 // postfix func > <T: Comparable> (lhs: T) -> (_ rhs: T) -> Bool {
 //     return { lhs > $0 }
