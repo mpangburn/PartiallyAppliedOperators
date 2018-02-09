@@ -1,6 +1,7 @@
 # Partially Applied Operators
-<img src="https://img.shields.io/badge/Swift-4.0-orange.svg"/>
-    <a href="https://twitter.com/pangburnout"><img src="https://img.shields.io/badge/contact-@pangburnout-blue.svg?style=flat" alt="Twitter: @pangburnout"/></a>
+
+[![Swift 4.0](https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat)](#)
+[![@pangburnout](https://img.shields.io/badge/contact-@pangburnout-blue.svg?style=flat)](https://twitter.com/pangburnout)
 
 A thought experiment in bringing the semantics of Haskell's partial application of operators to Swift.
 
