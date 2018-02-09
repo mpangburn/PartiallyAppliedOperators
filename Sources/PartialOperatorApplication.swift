@@ -228,7 +228,7 @@ prefix func &+ <T: FixedWidthInteger> (rhs: T) -> (_ lhs: T) -> T {
 }
 
 postfix operator &+
-postfix func &+ <T: FixedWidthInteger> (lhs: T) -> (_ lhs: T) -> T {
+postfix func &+ <T: FixedWidthInteger> (lhs: T) -> (_ rhs: T) -> T {
     return { lhs &+ $0 }
 }
 
